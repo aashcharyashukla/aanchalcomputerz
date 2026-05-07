@@ -1,0 +1,717 @@
+<!-- =========================================
+     AANCHAL COMPUTERZ - PRODUCTS PAGE
+     Premium Responsive E-Commerce UI
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aanchal Computerz - Products</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+/* =========================================
+   GLOBAL WEBSITE CSS
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#070b16;
+  color:white;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  width:450px;
+  height:450px;
+  background:#00d9ff15;
+  border-radius:50%;
+  top:-150px;
+  left:-150px;
+  filter:blur(120px);
+  z-index:-1;
+}
+
+.container{
+  width:90%;
+  max-width:1300px;
+  margin:auto;
+}
+
+/* =========================================
+   TOP CONTACT BAR CSS
+========================================= */
+
+.topbar{
+  padding:12px 0;
+  background:rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+}
+
+.topbar-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.topbar a{
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+/* =========================================
+   NAVBAR CSS
+========================================= */
+
+nav{
+  padding:25px 0;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  border-radius:24px;
+  padding:18px 28px;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.logo-wrapper{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo-img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  border-radius:14px;
+}
+
+.logo-text{
+  font-size:28px;
+  font-weight:700;
+  color:#00d9ff;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+  color:#00d9ff;
+}
+
+.btn{
+  padding:14px 26px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#00d9ff,#005eff);
+  color:white;
+  text-decoration:none;
+  border:none;
+  font-weight:600;
+  box-shadow:0 0 25px #00d9ff40;
+  transition:0.4s;
+  display:inline-block;
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+}
+
+/* =========================================
+   PAGE HERO CSS
+========================================= */
+
+.page-hero{
+  padding:80px 0 60px;
+  text-align:center;
+}
+
+.page-hero h1{
+  font-size:62px;
+  margin-bottom:20px;
+  background:linear-gradient(to right,#ffffff,#00d9ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.page-hero p{
+  max-width:850px;
+  margin:auto;
+  color:#cbd5e1;
+  line-height:1.9;
+  font-size:18px;
+}
+
+/* =========================================
+   FILTER BAR CSS
+========================================= */
+
+.product-filter-bar{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:60px;
+}
+
+.product-filter-bar input,
+.product-filter-bar select{
+  padding:16px 20px;
+  border:none;
+  outline:none;
+  border-radius:14px;
+  background:rgba(15,23,42,0.95);
+  border:1px solid rgba(255,255,255,0.08);
+  color:white;
+  min-width:240px;
+  font-size:15px;
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.product-filter-bar input:focus,
+.product-filter-bar select:focus{
+  border:1px solid #00d9ff;
+  box-shadow:0 0 20px #00d9ff25;
+}
+
+/* =========================================
+   DROPDOWN OPTION STYLING CSS
+========================================= */
+
+.product-filter-bar select option{
+  background:#0f172a;
+  color:white;
+  padding:12px;
+}
+
+.product-filter-bar select:hover{
+  border-color:#00d9ff;
+}
+
+/* =========================================
+   PRODUCTS GRID CSS
+========================================= */
+
+.products-section{
+  padding-bottom:120px;
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+}
+
+.product-card{
+  position:relative;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:30px;
+  overflow:hidden;
+  backdrop-filter:blur(18px);
+  transition:0.4s;
+}
+
+.product-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 35px #00d9ff25;
+}
+
+.product-tag{
+  position:absolute;
+  top:20px;
+  left:20px;
+  background:linear-gradient(135deg,#00d9ff,#005eff);
+  padding:8px 16px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.product-image{
+  height:280px;
+  background:#0f172a;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.product-image img{
+  width:70%;
+  transition:0.4s;
+}
+
+.product-card:hover .product-image img{
+  transform:scale(1.08);
+}
+
+.product-content{
+  padding:30px;
+}
+
+.product-content h3{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.product-content p{
+  color:#cbd5e1;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+.product-rating{
+  margin-bottom:18px;
+}
+
+.product-price{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.new-price{
+  font-size:28px;
+  font-weight:700;
+  color:#00d9ff;
+}
+
+.old-price{
+  color:#94a3b8;
+  text-decoration:line-through;
+}
+
+.product-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.secondary-btn{
+  background:transparent;
+  border:1px solid #00d9ff;
+}
+
+/* =========================================
+   FLOATING WHATSAPP BUTTON CSS
+========================================= */
+
+.floating-whatsapp{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#00d9ff,#005eff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  color:white;
+  font-size:28px;
+  box-shadow:0 0 35px #00d9ff60;
+}
+
+/* =========================================
+   FOOTER CSS
+========================================= */
+
+footer{
+  padding:60px 0 30px;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer-content{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  margin-bottom:40px;
+}
+
+.footer-content h3{
+  margin-bottom:20px;
+  color:#00d9ff;
+}
+
+.footer-content p,
+.footer-content a{
+  color:#cbd5e1;
+  line-height:2;
+  text-decoration:none;
+  display:block;
+}
+
+.footer-bottom{
+  text-align:center;
+  padding-top:25px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  color:#94a3b8;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE CSS
+========================================= */
+
+@media(max-width:768px){
+
+  .navbar{
+    justify-content:center;
+    text-align:center;
+  }
+
+  .nav-links{
+    justify-content:center;
+  }
+
+  .page-hero h1{
+    font-size:42px;
+    line-height:1.3;
+  }
+
+  .page-hero p{
+    font-size:16px;
+  }
+
+  .product-filter-bar{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .product-filter-bar input,
+  .product-filter-bar select{
+    width:100%;
+  }
+
+  .product-content h3{
+    font-size:24px;
+  }
+
+}
+
+  </style>
+</head>
+<body>
+
+<!-- =========================================
+     TOP CONTACT BAR SECTION
+========================================= -->
+
+<div class="topbar">
+  <div class="container topbar-content">
+    <a href="tel:+919214143231">📞 9214143231</a>
+    <a href="mailto:support@aanchalcomputerz.com">📧 support@aanchalcomputerz.com</a>
+    <span>🚚 Doorstep Services Across Delhi NCR</span>
+  </div>
+</div>
+
+<!-- =========================================
+     NAVBAR SECTION
+========================================= -->
+
+<nav>
+  <div class="container navbar">
+
+    <div class="logo-wrapper">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <div class="logo-text">Aanchal Computerz</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="#">Services</a>
+      <a href="#">Warranty</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <a href="https://wa.me/919214143231?text=Hello%20Aanchal%20Computerz" target="_blank" class="btn">
+      WhatsApp Us
+    </a>
+
+  </div>
+</nav>
+
+<!-- =========================================
+     PAGE HERO SECTION
+========================================= -->
+
+<section class="page-hero">
+  <div class="container">
+
+    <h1>Premium Computer Products</h1>
+
+    <p>
+      Explore laptops, printers, SSDs, RAM, accessories & software solutions with professional support and doorstep service across Delhi NCR.
+    </p>
+
+  </div>
+</section>
+
+<!-- =========================================
+     PRODUCTS SECTION
+========================================= -->
+
+<section class="products-section">
+  <div class="container">
+
+    <!-- FILTER BAR -->
+
+    <div class="product-filter-bar">
+
+      <input type="text" placeholder="Search Products...">
+
+      <select>
+        <option>All Categories</option>
+        <option>Laptops</option>
+        <option>Printers</option>
+        <option>SSD</option>
+        <option>RAM</option>
+        <option>Software</option>
+      </select>
+
+      <select>
+        <option>Sort By</option>
+        <option>Low To High</option>
+        <option>High To Low</option>
+        <option>Latest</option>
+      </select>
+
+    </div>
+
+    <!-- PRODUCTS GRID -->
+
+    <div class="products-grid">
+
+      <!-- PRODUCT CARD 1 -->
+
+      <div class="product-card">
+
+        <div class="product-tag">Best Seller</div>
+
+        <div class="product-image">
+          <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png" alt="Gaming Laptop">
+        </div>
+
+        <div class="product-content">
+
+          <h3>Gaming Laptop</h3>
+
+          <p>
+            High performance gaming & editing laptop with latest processor.
+          </p>
+
+          <div class="product-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+
+          <div class="product-price">
+            <span class="new-price">₹59,999</span>
+            <span class="old-price">₹65,999</span>
+          </div>
+
+          <div class="product-buttons">
+
+            <a href="https://wa.me/919214143231?text=I%20want%20to%20buy%20Gaming%20Laptop" target="_blank" class="btn">
+              Buy Now
+            </a>
+
+            <a href="#" class="btn secondary-btn">
+              Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT CARD 2 -->
+
+      <div class="product-card">
+
+        <div class="product-tag">Popular</div>
+
+        <div class="product-image">
+          <img src="https://cdn-icons-png.flaticon.com/512/1792/1792510.png" alt="SSD">
+        </div>
+
+        <div class="product-content">
+
+          <h3>512GB SSD</h3>
+
+          <p>
+            Ultra-fast SSD storage for laptops & desktops.
+          </p>
+
+          <div class="product-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+
+          <div class="product-price">
+            <span class="new-price">₹3,499</span>
+            <span class="old-price">₹4,499</span>
+          </div>
+
+          <div class="product-buttons">
+
+            <a href="https://wa.me/919214143231?text=I%20want%20to%20buy%20512GB%20SSD" target="_blank" class="btn">
+              Buy Now
+            </a>
+
+            <a href="#" class="btn secondary-btn">
+              Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT CARD 3 -->
+
+      <div class="product-card">
+
+        <div class="product-tag">New</div>
+
+        <div class="product-image">
+          <img src="https://cdn-icons-png.flaticon.com/512/3163/3163462.png" alt="Printer">
+        </div>
+
+        <div class="product-content">
+
+          <h3>Wireless Printer</h3>
+
+          <p>
+            Professional wireless printer for office & home use.
+          </p>
+
+          <div class="product-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+
+          <div class="product-price">
+            <span class="new-price">₹12,999</span>
+            <span class="old-price">₹15,999</span>
+          </div>
+
+          <div class="product-buttons">
+
+            <a href="https://wa.me/919214143231?text=I%20want%20to%20buy%20Wireless%20Printer" target="_blank" class="btn">
+              Buy Now
+            </a>
+
+            <a href="#" class="btn secondary-btn">
+              Details
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================
+     FOOTER SECTION
+========================================= -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-content">
+
+      <div>
+        <h3>Aanchal Computerz</h3>
+        <p>
+          Professional laptop, desktop & printer sales and doorstep repair services across Delhi NCR.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#">Services</a>
+        <a href="#">Warranty</a>
+      </div>
+
+      <div>
+        <h3>Services</h3>
+        <a href="#">Laptop Repair</a>
+        <a href="#">Printer Repair</a>
+        <a href="#">Windows Installation</a>
+        <a href="#">Networking</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+919214143231">📞 9214143231</a>
+        <a href="mailto:support@aanchalcomputerz.com">📧 support@aanchalcomputerz.com</a>
+        <p>📍 Delhi NCR</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Aanchal Computerz — All Rights Reserved.
+    </div>
+
+  </div>
+</footer>
+
+<!-- =========================================
+     FLOATING WHATSAPP BUTTON
+========================================= -->
+
+<a href="https://wa.me/919214143231?text=Hello%20Aanchal%20Computerz%2C%20I%20want%20product%20details." target="_blank" class="floating-whatsapp">
+  💬
+</a>
+
+</body>
+</html>
