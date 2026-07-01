@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aanchal Computerz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+/* =========================================
+   GLOBAL WEBSITE STYLE
+========================================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size:40px 40px;
+      background:#070b16;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#00d9ff20;
+      border-radius:50%;
+      top:-200px;
+      left:-100px;
+      filter:blur(120px);
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#005eff20;
+      border-radius:50%;
+      bottom:-200px;
+      right:-100px;
+      filter:blur(120px);
+      z-index:-1;
+    }
+
+    .container{
+      width:90%;
+      max-width:1300px;
+      margin:auto;
+    }
+
+    /* =========================================
+   TOP CONTACT BAR CSS
+========================================= */
+
+    .topbar{
+      width:100%;
+      padding:12px 0;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    .topbar-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:14px;
+      color:#cbd5e1;
+    }
+
+    .topbar-left,
+    .topbar-right{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    .topbar-right a{
+      color:#cbd5e1;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .topbar-right a:hover{
+      color:#00d9ff;
+    }
+
+    /* =========================================
+   NAVBAR SECTION CSS
+========================================= */
+
+    nav{
+      padding:22px 0;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 30px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(15px);
+      border-radius:20px;
+    }
+
+    .logo-wrapper{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .logo-img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+      border-radius:14px;
+      box-shadow:0 0 25px #00d9ff40;
+    }
+
+    .logo-text{
+      font-size:28px;
+      font-weight:700;
+      color:#00d9ff;
+      letter-spacing:1px;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#00d9ff;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#ffffff;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    .nav-links a:hover{
+      color:#00d9ff;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg,#00d9ff,#005eff);
+      color:white;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.4s;
+      text-decoration:none;
+      display:inline-block;
+      box-shadow:0 0 25px #00d9ff55;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 35px #00d9ff;
+    }
+
+    /* =========================================
+   HERO SECTION CSS
+========================================= */
+
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:50px;
+      padding:80px 0;
+    }
+
+    .hero-content{
+      flex:1;
+    }
+
+    .hero-content h1{
+      background:linear-gradient(to right,#ffffff,#00d9ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      font-size:64px;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .hero-content h1 span{
+      color:#00d9ff;
+    }
+
+    .hero-content p{
+      color:#cbd5e1;
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:35px;
+      max-width:650px;
+    }
+
+    /* =========================================
+   HERO BUTTONS & BADGES CSS
+========================================= */
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .secondary-btn{
+      background:transparent;
+      border:1px solid #00d9ff;
+    }
+
+        .hero-badges{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-top:35px;
+    }
+
+    .badge{
+      padding:12px 18px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;
+      color:#ffffff;
+      font-size:14px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 0 20px #00d9ff20;
+    }
+
+/* =========================================
+   HERO IMAGE SECTION CSS
+========================================= */
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      overflow:visible;
+      padding-top:40px;
+    }
+
+        .doorstep-floating{
+      position:absolute;
+      top:0;
+      right:20px;
+      padding:15px 20px;
+      background:linear-gradient(135deg,#00d9ff,#005eff);
+      border-radius:15px;
+      font-size:14px;
+      font-weight:600;
+      box-shadow:0 0 25px #00d9ff70;
+      animation:floatDoor 3s ease-in-out infinite;
+    }
+
+    @keyframes floatDoor{
+      0%{transform:translateY(0px)}
+      50%{transform:translateY(-10px)}
+      100%{transform:translateY(0px)}
+    }
+
+    .laptop-box{
+      width:340px;
+      height:340px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(20px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      animation:float 4s ease-in-out infinite;
+      box-shadow:0 0 40px #00d9ff30;
+      overflow:hidden;
+    }
+
+    .laptop-box img{
+      width:75%;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px)}
+      50%{transform:translateY(-20px)}
+      100%{transform:translateY(0px)}
+    }
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#94a3b8;
+    }
+
+    .brands{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:20px;
+    }
+
+    .brand-card{
+      background:rgba(255,255,255,0.04);
+      padding:30px;
+      text-align:center;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .brand-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 25px #00d9ff40;
+      color:#00d9ff;
+    }
+
+    /* =========================================
+   SERVICES / PRODUCTS / REVIEWS GRID CSS
+========================================= */
+
+    .services-grid,
+    .products-grid,
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    /* =========================================
+   COMMON CARD DESIGN CSS
+========================================= */
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      padding:35px;
+      backdrop-filter:blur(18px);
+      transition:0.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:'';
+      position:absolute;
+      width:150px;
+      height:150px;
+      background:#00d9ff20;
+      border-radius:50%;
+      top:-50px;
+      right:-50px;
+      filter:blur(40px);
+    }
+
+        .card:hover{
+      transform:translateY(-12px) rotateX(5deg);
+      box-shadow:0 0 30px #00d9ff30;
+    }
+
+    .service-icon{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#cbd5e1;
+      line-height:1.7;
+    }
+
+    /* =========================================
+   PRODUCT CARD CSS
+========================================= */
+
+    .product-image{
+      width:100%;
+      height:220px;
+      background:#0f172a;
+      border-radius:20px;
+      margin-bottom:25px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .product-image img{
+      width:80%;
+      transition:0.4s;
+    }
+
+    .card:hover .product-image img{
+      transform:scale(1.1);
+    }
+
+    .price{
+      color:#00d9ff;
+      font-size:24px;
+      margin:20px 0;
+      font-weight:700;
+    }
+
+    /* =========================================
+   COUPON BANNER CSS
+========================================= */
+
+    .coupon-banner{
+      background:linear-gradient(135deg,#00d9ff,#005eff);
+      border-radius:30px;
+      padding:60px;
+      text-align:center;
+      box-shadow:0 0 40px #00d9ff50;
+    }
+
+    /* =========================================
+   DOORSTEP SERVICE SECTION CSS
+========================================= */
+
+    .doorstep-section{
+      padding:110px 0;
+    }
+
+    .doorstep-wrapper{
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      align-items:center;
+      gap:70px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:35px;
+      padding:60px;
+      backdrop-filter:blur(18px);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .doorstep-wrapper::before{
+      content:'';
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:#00d9ff15;
+      border-radius:50%;
+      top:-120px;
+      left:-120px;
+      filter:blur(80px);
+    }
+
+    .doorstep-image{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .doorstep-image img{
+      width:100%;
+      max-width:320px;
+      object-fit:contain;
+      animation:float 4s ease-in-out infinite;
+      filter:drop-shadow(0 0 30px #00d9ff40);
+    }
+
+    .doorstep-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .doorstep-content h2{
+      font-size:42px;
+      line-height:1.3;
+      margin-bottom:20px;
+    }
+
+    .doorstep-content p{
+      color:#cbd5e1;
+      line-height:1.9;
+      font-size:17px;
+      margin-bottom:30px;
+      max-width:650px;
+    }
+
+    .doorstep-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-bottom:35px;
+    }
+
+    .doorstep-list div{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:16px 18px;
+      font-size:15px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .doorstep-list div:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 20px #00d9ff25;
+    }
+
+    .doorstep-btn{
+      margin-top:10px;
+    }
+
+    .coupon-banner h2{
+      font-size:52px;
+      margin-bottom:20px;
+    }
+
+    .coupon-banner p{
+      font-size:20px;
+      margin-bottom:30px;
+    }
+
+    /* =========================================
+   REPAIR PROCESS TIMELINE CSS
+========================================= */
+
+    .timeline{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .timeline-step{
+      flex:1;
+      min-width:220px;
+      text-align:center;
+      padding:30px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .timeline-step h3{
+      color:#00d9ff;
+      margin-bottom:15px;
+    }
+
+    /* =========================================
+   WARRANTY CHECK SECTION CSS
+========================================= */
+
+    .warranty-box{
+      max-width:700px;
+      margin:auto;
+      background:rgba(255,255,255,0.05);
+      padding:50px;
+      border-radius:25px;
+      border:1px solid rgba(255,255,255,0.08);
+      text-align:center;
+    }
+
+    .warranty-box input,
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:18px;
+      border:none;
+      outline:none;
+      border-radius:12px;
+      margin-bottom:20px;
+      background:#111827;
+      color:white;
+    }
+
+    /* =========================================
+   REVIEW SECTION CSS
+========================================= */
+
+    .reviews-grid .card h4{
+      color:#00d9ff;
+      margin-top:20px;
+    }
+
+    /* =========================================
+   CONTACT SECTION CSS
+========================================= */
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+
+    .contact-form,
+    .contact-info{
+      background:rgba(255,255,255,0.05);
+      padding:40px;
+      border-radius:25px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-info h3{
+      margin-bottom:25px;
+      font-size:28px;
+    }
+
+    .contact-info p{
+      margin-bottom:20px;
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    /* =========================================
+   FOOTER SECTION CSS
+========================================= */
+
+    footer{
+      padding:60px 0 30px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+      margin-bottom:40px;
+    }
+
+    .footer-content h3{
+      margin-bottom:20px;
+      color:#00d9ff;
+    }
+
+    .footer-content p,
+    .footer-content a{
+      color:#cbd5e1;
+      line-height:2;
+      text-decoration:none;
+      display:block;
+    }
+
+    .footer-bottom{
+      text-align:center;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:25px;
+    }
+
+    /* =========================================
+   FLOATING WHATSAPP BUTTON CSS
+========================================= */
+
+    .floating-whatsapp{
+      position:fixed;
+      right:25px;
+      bottom:25px;
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#00d9ff,#005eff);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:28px;
+      color:white;
+      text-decoration:none;
+      z-index:999;
+      box-shadow:0 0 35px #00d9ff80;
+      animation:floatWhatsapp 2s ease-in-out infinite;
+    }
+
+    @keyframes floatWhatsapp{
+      0%{transform:translateY(0px)}
+      50%{transform:translateY(-10px)}
+      100%{transform:translateY(0px)}
+    }
+
+    /* =========================================
+   MOBILE RESPONSIVE CSS
+========================================= */
+
+    @media(max-width:992px){
+
+      .topbar-content{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+      }
+
+      .topbar-left,
+      .topbar-right{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-image{
+        padding-top:70px;
+      }
+
+      .doorstep-floating{
+        top:0;
+        right:50%;
+        transform:translateX(50%);
+        font-size:12px;
+        padding:12px 16px;
+        white-space:nowrap;
+      }
+
+      .laptop-box{
+        width:260px;
+        height:260px;
+      }
+
+      .laptop-box img{
+        width:70%;
+      }
+
+      
+
+      .doorstep-content h2{
+        font-size:30px;
+        line-height:1.4;
+        text-align:center;
+      }
+
+      .doorstep-content p{
+        font-size:15px;
+        line-height:1.8;
+        text-align:center;
+      }
+
+      .doorstep-list{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .doorstep-list div{
+        padding:14px;
+        font-size:14px;
+        text-align:left;
+      }
+
+      .hero-content h1{
+        font-size:38px;
+        line-height:1.3;
+      }
+
+      .doorstep-wrapper{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:35px 25px;
+        gap:35px;
+      }
+
+      .doorstep-image img{
+        max-width:220px;
+      }
+
+      .hero-badges{
+        justify-content:center;
+      }
+
+      .doorstep-content h2{
+        font-size:36px;
+      }
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-content h1{
+        font-size:44px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .brands{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .contact-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .coupon-banner h2{
+        font-size:36px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- =========================================
+     TOP CONTACT BAR START
+========================================= -->
+
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-left">
+        <a href="tel:+919214143231" style="color:#cbd5e1;text-decoration:none;">📞 9214143231</a>
+        <span>💻 Hardware & Software Solutions</span>
+      </div>
+
+      <div class="topbar-right">
+        <a href="https://www.instagram.com/aanchalcomputerz/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/aanchalcomputerz" target="_blank">Facebook</a>
+        <a href="https://wa.me/919214143231" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+     NAVBAR SECTION START
+========================================= -->
+
+<nav>
+    <div class="container navbar">
+      <div class="logo-wrapper">
+        <img src="logo/logo.jpeg" alt="Aanchal Computerz Logo" class="logo-img">
+        <div class="logo-text">Aanchal Computerz</div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">Warranty</a>
+        <a href="#">Sell Device</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <a href="https://wa.me/919214143231" target="_blank" class="btn">WhatsApp Us</a>
+    </div>
+  </nav>
+
+  <!-- =========================================
+     HERO SECTION START
+========================================= -->
+
+<section class="hero container">
+
+    <div class="hero-content">
+      <h1>
+        Laptop • Desktop • <span>Printer Repair</span>
+      </h1>
+
+      <p>
+        Professional Doorstep Laptop, Desktop & Printer Repair Services for Home, Office & Businesses with Fast Response & Expert Engineers.
+      </p>
+
+      <div class="hero-buttons">
+        
+        <!-- HERO BUTTONS -->
+        <a href="https://wa.me/919214143231" target="_blank" class="btn">Book Service</a>
+        <a href="#products" class="btn secondary-btn">Shop Products</a>
+      </div>
+
+      <!-- HERO TRUST BADGES -->
+      <div class="hero-badges">
+        <div class="badge">🚀 Same Day Doorstep Service</div>
+        <div class="badge">🛠 Expert Engineers</div>
+        <div class="badge">🔒 Genuine Parts</div>
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+
+      <div class="doorstep-floating">
+        🚚 Doorstep Service Available
+      </div>
+      <div class="laptop-box">
+        <img src="hero/set.png" alt="Laptop">
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Trusted Brands</h2>
+        <p>We work with leading technology brands</p>
+      </div>
+
+      <div class="brands">
+        <div class="brand-card">HP</div>
+        <div class="brand-card">Dell</div>
+        <div class="brand-card">Lenovo</div>
+        <div class="brand-card">Asus</div>
+        <div class="brand-card">Canon</div>
+        <div class="brand-card">Epson</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Professional Repair & IT Solutions</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="card">
+          <div class="service-icon">💻</div>
+          <h3>Laptop Repair</h3>
+          <p>Complete hardware & software laptop repairing services with genuine parts support.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-icon">🖥️</div>
+          <h3>Desktop Repair</h3>
+          <p>Professional desktop repair, motherboard fixing, RAM & SSD upgrades.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-icon">🖨️</div>
+          <h3>Printer Repair</h3>
+          <p>Inkjet, Laser & All-in-One printer repair solutions for office and home use.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-icon">⚙️</div>
+          <h3>Windows Installation</h3>
+          <p>Windows setup, driver installation, activation & optimization services.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-icon">💾</div>
+          <h3>Data Recovery</h3>
+          <p>Secure data backup and recovery solutions for damaged storage devices.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-icon">📡</div>
+          <h3>Networking</h3>
+          <p>CCTV setup, office networking, WiFi setup & complete IT support solutions.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+     DOORSTEP SERVICE SECTION START
+========================================= -->
+
+<section class="doorstep-section">
+
+  <div class="container doorstep-wrapper">
+
+    <div class="doorstep-image">
+      <img src="doorstep/fullpro.png" alt="Doorstep Service">
+    </div>
+
+    <div class="doorstep-content">
+
+      <h2>Professional Doorstep Computer Services</h2>
+
+      <p>
+        Get expert laptop, desktop & printer repair services directly at your home or office with same day support.
+      </p>
+
+      <div class="doorstep-list">
+        <div>✅ Same Day Visit</div>
+        <div>✅ Home & Office Support</div>
+        <div>✅ Expert Engineers</div>
+        <div>✅ Fast Diagnosis</div>
+        <div>✅ Genuine Parts</div>
+      </div>
+
+      <a href="https://wa.me/919214143231?text=Hello%20Aanchal%20Computerz%2C%20I%20want%20to%20book%20a%20doorstep%20computer%20service." target="_blank" class="btn doorstep-btn">Book Doorstep Service</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     FEATURED PRODUCTS SECTION START
+========================================= -->
+
+<section id="products">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Featured Products</h2>
+        <p>Latest Computer Accessories & Components</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="card">
+          <div class="product-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920329.png">
+          </div>
+          <h3>Gaming Laptop</h3>
+          <div class="price">₹59,999</div>
+          <a href="#" class="btn">Add To Cart</a>
+        </div>
+
+        <div class="card">
+          <div class="product-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/1792/1792510.png">
+          </div>
+          <h3>SSD Storage</h3>
+          <div class="price">₹3,499</div>
+          <a href="#" class="btn">Add To Cart</a>
+        </div>
+
+        <div class="card">
+          <div class="product-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/3163/3163462.png">
+          </div>
+          <h3>Printer</h3>
+          <div class="price">₹12,999</div>
+          <a href="#" class="btn">Add To Cart</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="coupon-banner">
+        <h2>Use Coupon: AANCHAL10</h2>
+        <p>Get 10% OFF on Repair Services & Products</p>
+        <a href="#" class="btn secondary-btn">Claim Offer</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Repair Process</h2>
+        <p>Simple & Professional Workflow</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-step">
+          <h3>1. Book Service</h3>
+          <p>Customer creates repair request online.</p>
+        </div>
+
+        <div class="timeline-step">
+          <h3>2. Engineer Assigned</h3>
+          <p>Nearest engineer gets assigned automatically.</p>
+        </div>
+
+        <div class="timeline-step">
+          <h3>3. Repair</h3>
+          <p>Issue diagnosis and repair process starts.</p>
+        </div>
+
+        <div class="timeline-step">
+          <h3>4. Delivery</h3>
+          <p>System repaired and delivered safely.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Warranty Check</h2>
+        <p>Enter serial number to check warranty</p>
+      </div>
+
+      <div class="warranty-box">
+        <input type="text" placeholder="Enter Serial Number">
+        <button class="btn">Check Warranty</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Customer Reviews</h2>
+        <p>Trusted by hundreds of happy customers</p>
+      </div>
+
+      <div class="reviews-grid">
+
+        <div class="card">
+          <p>
+            ★★★★★<br><br>
+            Amazing laptop repair service. Fast delivery and professional support.
+          </p>
+          <h4>— Ravi Sharma</h4>
+        </div>
+
+        <div class="card">
+          <p>
+            ★★★★★<br><br>
+            Best printer repair service in Delhi NCR. Genuine support and affordable pricing.
+          </p>
+          <h4>— Aman Gupta</h4>
+        </div>
+
+        <div class="card">
+          <p>
+            ★★★★★<br><br>
+            Excellent software installation and system optimization service.
+          </p>
+          <h4>— Rohit Verma</h4>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Get in touch for support & services</p>
+      </div>
+
+      <div class="contact-wrapper">
+
+        <div class="contact-form">
+          <input type="text" placeholder="Your Name">
+          <input type="text" placeholder="Phone Number">
+          <textarea rows="6" placeholder="Your Message"></textarea>
+          <button class="btn">Send Message</button>
+        </div>
+
+        <div class="contact-info">
+          <h3>Aanchal Computerz</h3>
+          <p><a href="tel:+919214143231" style="color:#cbd5e1;text-decoration:none;">📞 9214143231</a></p>
+          <p>📍 Delhi NCR, India</p>
+          <p>💻 Hardware & Software Sales & Services</p>
+          <p>🖨️ Printer, Laptop & Desktop Repair</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div>
+          <h3>Aanchal Computerz</h3>
+          <p>
+            Professional computer repair & IT solutions company offering hardware, software & networking services.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">Services</a>
+          <a href="#">Warranty</a>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+          <a href="#">Laptop Repair</a>
+          <a href="#">Printer Repair</a>
+          <a href="#">Data Recovery</a>
+          <a href="#">Networking</a>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <p><a href="tel:+919214143231" style="color:#cbd5e1;text-decoration:none;">📞 9214143231</a></p>
+          <p>📍 Delhi NCR</p>
+          <p><a href="mailto:support@aanchalcomputerz.com" style="color:#cbd5e1;text-decoration:none;">📧 support@aanchalcomputerz.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Aanchal Computerz — All Rights Reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919214143231?text=Hello%20Aanchal%20Computerz%2C%20I%20need%20computer%20service." target="_blank" class="floating-whatsapp">
+    💬
+  </a>
+
+  <!-- =========================================
+     JAVASCRIPT SECTION START
+========================================= -->
+
+<script>
+
+/* =========================================
+   PREMIUM 3D CARD HOVER EFFECT
+========================================= */
+
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateY = ((x / rect.width) - 0.5) * 14;
+        const rotateX = ((y / rect.height) - 0.5) * -14;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0px)';
+      });
+    });
+
+  </script>
+
+</body>
+</html>
